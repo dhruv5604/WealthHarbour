@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <link href="{% static "css/media.css" %}" rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      href="{% static "img/favicon.svg" %}"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>WealthHarbour</title>
+  </head>
+  <body>
+    <section id="home">
+    <header class="container">
+      <nav>
+        <div class="logo">
+          <p>WealthHarbour</p>
+        </div>
+        <section id="home">
+        <div class="buttons">
+          {% if user.is_authenticated %}
+            <a href="{% url "logout" %}" class="button contact">Logout</a>
+          {% else %}  
+            <a href="{% url "login" %}" class="button contact">Login</a>
+          {% endif %}
+          <a href="#dashboard" class="button get-started">Dashboard</a>
+          <a href="#preview" class="button get-started">Networth</a>
+          <a href="#trackWealthChat" class="button get-started">wealthchat</a>
+        </div>
+      </section>
+        <div class="mobile-menu">
+          <div class="open-close">
+            <img
+              src="./images/menu.svg"
+              alt="Abrir"
+              class="open"
+              onclick="Menu.open()"
+            />
+            <img
+              src="./images/close.svg"
+              alt="fechar"
+              class="close"
+              onclick="Menu.close()"
+            />
+
+            <div class="logo-menu">
+              <img src="./images/logo.svg" alt="" />
+              <p>Monances</p>
+            </div>
+          </div>
+          <div class="menu">
+            <div class="menu-open">
+              <div class="menu-items">
+                <ul>
+                  <li><a href="./index.html" onclick="Menu.close()">Home</a></li>
+                  <li><a href="#contact" onclick="Menu.close()">Contact</a></li>
+                  <li>
+                    <a
+                      href="./pages/Dashboard/dashboard.html"
+                      onclick="Menu.close()"
+                      >Get Started</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section id="dashboard">
+      <div class="header-content">
+        <div class="header-content-left">
+          <h1>Your best financial life starts here.</h1>
+          <p>
+            A smart, easy-to-use app that allows you to track your in-and-out
+            money.
+          </p>
+          {% comment %} <a href="{% url "expenses" %}" class="button get-started">Go to Dashboard
+          </a> {% endcomment %}
+          {% if user.is_authenticated %}
+          <a href="{% url 'expenses' %}" class="button get-started">Go to Dashboard</a>
+          {% else %}
+          <a href="{% url 'login' %}" class="button get-started">Go to Dashboard</a>
+          {% endif %}
+        </div>
+
+        <div class="header-content-right">
+          <img src="{% static "img/team.svg" %}" alt="Team image" />
+        </div>
+      </div>
+    </section>
+    </header>
+    <!--END OF HEADER-------------------- -->
+
+
+      <section class="track-your-spending container" id="track">
+        <div class="track-your-spending-left">
+          <h2 class="section-title">Track your spending</h2>
+          <p class="section-paragraph">
+            Reach your goals with custom budgets, monitoring your incomes and
+            expenses everyday, All for free.
+          </p>
+          <div class="get-started-line">
+            <a href="{% url "stats" %}" class="get-started"
+              >Get Started</a
+            >
+            <div class="green-line"></div>
+          </div>
+        </div>
+
+        <div class="track-your-spending-right">
+          <img src="{% static "img/invest.png" %}" alt="image" />
+        </div>
+      </section>
+      <!--END OF track-your-spending SECTION-------------------- -->
+
+      
+    <main id="preview">
+      <section class="app-preview container">
+        <div class="app-preview-left">
+          <img src="{% static "img/laptop_preview.svg" %}" alt="App image" />
+        </div>
+
+        <div class="app-preview-right">
+          <h2 class="section-title">Calculate your Networth</h2>
+          <p class="section-paragraph">
+            Know the actual networth of yourself by adding the assets and liabilities 
+          </p>
+          <div class="get-started-line">
+            <a href="{% url "cal_networth" %}" class="get-started"
+              >Get Started</a
+            >
+            <div class="green-line"></div>
+          </div>
+        </div>
+      </section>
+      <!--END OF Networth container SECTION-------------------- -->
+
+      <section class="track-your-spending container" id="trackWealthChat">
+        <div class="track-your-spending-left">
+          <h2 class="section-title">wealthchat</h2>
+          <p class="section-paragraph">
+            Discuss your favourite financial topic remaining unidentified from others and share the insights regarding that field
+          </p>
+          <div class="get-started-line">
+            <a href="{% url "homeWealth" %}" class="get-started"
+              >Get Started</a
+            >
+            <div class="green-line"></div>
+          </div>
+        </div>
+
+        <div class="track-your-spending-right">
+          <img src="{% static "img/idea.svg" %}" alt="image" />
+        </div>
+      </section>
+      <!--END OF Chat-room  SECTION-------------------- -->
+
+      <section id="contact" class="get-in-touch container">
+        <div class="get-in-touch-content">
+          <div class="get-in-touch-left">
+            <h2 class="section-title">Get in touch with us.</h2>
+          </div>
+          <div class="get-in-touch-right">
+            <a
+              href="https://www.linkedin.com/in/vinicius-rodrigues-5897831b8/"
+              class="button get-started"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </section>
+      <!--END OF get-in-touch SECTION-------------------- -->
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-card">
+          <h3>Our mission</h3>
+          <a href="#home">Home</a>
+          <a href="#preview">Net-worth</a>
+          <a href="#track">Track spending</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-card">
+          <h3>About</h3>
+          <a href="https://github.com/HrishikeshThakkar-github" target="_blank">developer</a>
+          <a href="" target="_blank"
+            >Source code</a
+          >
+        </div>
+        <div class="footer-card">
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#preview">Net-worth</a>
+          <a href="#track">Track spending</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-card">
+          <h3>Get in touch</h3>
+          <div class="social">
+            <a
+              href="https://www.linkedin.com/in/hrishikeshthakkar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/"
+              target="_blank"
+              id="linkedin"
+              ><i data-feather="linkedin"></i
+            ></a>
+            <a href="https://github.com/HrishikeshThakkar-github" target="_blank"
+              ><i data-feather="github" id="git"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rishhi?igsh=ZmZueXpkZzBzbGly"
+              target="_blank"
+              id="insta"
+              ><i data-feather="instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--END OF FOOTER-------------------- -->
+
+    <!--LOADING SCREEN-->
+    <div class="loader-overlay">
+      <div class="loader"></div>  
+    </div>
+    
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{% static "js/scrollReveal.js" %}"></script>
+    <script src="{% static "js/home.js" %}"></script>
+    <script>
+      feather.replace();
+    </script>
+
+  <script>
+    // ==== LOADING SCREEN
+    let spinner = document.querySelector('.loader-overlay');
+
+    window.addEventListener('load', () => {
+      spinner.parentElement.removeChild(spinner);
+    })
+  </script>
+  </body>
+</html>

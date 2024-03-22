@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>Networth</h1>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-8">
+          <a href="{% url "expense-export-excel" %}" class="btn btn-info">Export EXCEL</a>
+          <a href="{% url "export_csv_networth" %}" class="btn btn-info">Export CSV</a>
+        </div>
+      </div>
+      <br>
+      <br>
+    <div class="app-table">
+        <table class="table table-stripped table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>year</th>
+              <th>Networth</th>
+              <th>Asset</th>
+              <th>Liabilities</th>
+              
+            </tr> 
+          </thead>
+  
+          <tbody>
+            {% for dataNet,dataAss,dataLib in zipped_data %}
+            <tr>
+              <td></td>
+              <td>{{forloop.counter}}</td>
+              <td>{{dataNet}}</td>
+              <td>{{dataAss}}</td>
+              <td>{{dataLib}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+    <br>
+    <br>
+    <br>
+
+    <canvas id="myChart" width="250px" height="90px"></canvas>
+
+    <script src="{% static "js/statNetworth.js" %}">
+{% endblock content %}

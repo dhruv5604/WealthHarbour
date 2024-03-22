@@ -1,0 +1,34 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Harbour</title>
+    <link href="{% static "css/login.css" %}" rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      href="{% static "img/favicon.svg" %}"
+      type="image/x-icon"
+    />
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="{% static "img/login.png" %}" width="400px" alt="">
+        </div>
+        <div class="content">
+            {% include "partials/_messages.html" %}
+            <h3>Register Your Account</h3>
+            <form action="{% url "register" %}" method="post">
+                {% csrf_token %}
+               
+            <input type="text" name="username" id="usernameField" placeholder="username">
+            <input type="email" name="email" id="emailField" placeholder="Email">
+            <input type="password" name="password" id="passwordField" placeholder="password">
+            <input type="submit" value="Register" class="btn btn-block btn-primary submit-btn" />
+            <p>Already a User?<a href="{% url "login" %}">Login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
