@@ -12,6 +12,7 @@
     />
 </head>
 <body>
+    
     <div class="container">
         <div class="image">
             <img src="{% static "img/login.png" %}" width="400px" alt="">
@@ -22,7 +23,7 @@
             <form action="{% url "login" %}" method="POST">{% csrf_token %}
             <input type="text" name="username" id="usernameField" placeholder="username">
             <input type="password" name="password" id="passwordField" placeholder="password">
-            <input type="submit" value="Login" class="btn btn-block btn-primary submit-btn" />
+            <button type="submit" class="btn btn-block btn-primary submit-btn">Login</button>
             <p>Not a User?<a href="{% url "register" %}">Register</a></p>
             </form>
         </div>

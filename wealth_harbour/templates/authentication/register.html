@@ -12,6 +12,7 @@
     />
 </head>
 <body>
+    
     <div class="container">
         <div class="image">
             <img src="{% static "img/login.png" %}" width="400px" alt="">
@@ -25,7 +26,7 @@
             <input type="text" name="username" id="usernameField" placeholder="username">
             <input type="email" name="email" id="emailField" placeholder="Email">
             <input type="password" name="password" id="passwordField" placeholder="password">
-            <input type="submit" value="Register" class="btn btn-block btn-primary submit-btn" />
+            <button type="submit" class="btn btn-block btn-primary submit-btn">Register</button>
             <p>Already a User?<a href="{% url "login" %}">Login</a></p>
             </form>
         </div>

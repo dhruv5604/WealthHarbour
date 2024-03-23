@@ -9,30 +9,15 @@
       <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
         <ul class="nav flex-column">
           
+          
+          
           <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "expenses" %}">
-              <svg class="bi"><use xlink:href="#file-earmark"/></svg>
-              Expenses
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "incomes" %}">
+            <a class="nav-link d-flex align-items-center gap-2" href="{% url "cal_networth" %}">
               <svg class="bi"><use xlink:href="#cart"/></svg>
-              Income
+              Networth
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "asset" %}">
-              <svg class="bi"><use xlink:href="#cart"/></svg>
-              Asset
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "liabilities" %}">
-              <svg class="bi"><use xlink:href="#cart"/></svg>
-              Liabilities
-            </a>
-          </li>
+        
         </ul>
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
@@ -42,28 +27,11 @@
           </a> {% endcomment %}
         </h6>
         <ul class="nav flex-column mb-auto">
+          
           <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "stats" %}">
+            <a class="nav-link d-flex align-items-center gap-2" href="{% url "stat_view_networth" %}">
               <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-              Expenses Summary
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "stat1" %}">
-              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-              Income Summary
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "statA" %}">
-              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-              Asset Summary
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="{% url "statL" %}">
-              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-              Liabilities Summary
+              Networth Summary
             </a>
           </li>
         </ul>

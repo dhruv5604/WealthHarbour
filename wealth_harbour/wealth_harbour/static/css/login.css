@@ -48,6 +48,7 @@ input[type]::placeholder{
     color: blueviolet;
     font-size: 16px;
 }
+
 button{
     width: 120px;
     height: 35px;
@@ -70,6 +71,7 @@ button:hover{
     font-weight: bold;
     outline: 2px solid blueviolet;
 }
+
 p{
     color: blueviolet;
     font-size: 16px;

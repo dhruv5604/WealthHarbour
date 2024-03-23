@@ -1,0 +1,26 @@
+{% extends "networth/baseNetworth.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+   <div class="row">
+   
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "cal_networth" %}">Networth</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Networth Summary</li>
+          </ol>
+        </nav>
+      </div>
+      
+      
+      <canvas id="myChart" width="200" height="90"></canvas>      
+</div>
+</div>    
+
+<script src="{% static "js/statNetworth.js" %}">
+
+{% endblock content %}
+

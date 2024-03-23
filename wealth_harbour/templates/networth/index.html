@@ -1,14 +1,15 @@
-{% extends "base.html" %}
+{% extends "networth/baseNetworth.html" %}
 {% load static %}
 {% block content %}
 
-    <h1>Networth</h1>
+<div class="container">
+  <br>
+  <h2 style="font-family: &quot;Playfair Display&quot;, serif">Calculate your Networth</h2>
 
     <br>
-
     <div class="row">
         <div class="col-md-8">
-          <a href="{% url "expense-export-excel" %}" class="btn btn-info">Export EXCEL</a>
+          <a href="{% url "export_excel_networth" %}" class="btn btn-info">Export EXCEL</a>
           <a href="{% url "export_csv_networth" %}" class="btn btn-info">Export CSV</a>
         </div>
       </div>
@@ -45,7 +46,7 @@
     <br>
     <br>
 
-    <canvas id="myChart" width="250px" height="90px"></canvas>
 
-    <script src="{% static "js/statNetworth.js" %}">
+    </div>
+
 {% endblock content %}
