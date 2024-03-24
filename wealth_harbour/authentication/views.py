@@ -219,7 +219,7 @@ class LoginView(View):
 
     def __init__(self, **kwargs: json) -> None:
         super().__init__(**kwargs)
-        print(kwargs)
+        
 
     def get(self,request):
         return render(request,'authentication/login.html')
@@ -235,13 +235,13 @@ class LoginView(View):
             if user:
                 if user.is_active:
                     auth.login(request,user)
-                    messages.success(request, 'Welcome ' + user.username + ' You are logged in.')
+                    # messages.success(request, 'Welcome ' + user.username + ' You are logged in.')
                     next_url = request.GET.get('next')
                     current_url = request.build_absolute_uri()
                     if 'wealthchat' in current_url:
                         return redirect('homeWealth')
                     else:
-                        return render(request,'home/index.html')
+                        return redirect('indexHome')
 
                 messages.error(
                     request,'Account is not activate,please check your email')
