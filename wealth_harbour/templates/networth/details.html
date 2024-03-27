@@ -1,52 +1,80 @@
 {% extends "networth/baseNetworth.html" %}
 {% load static %}
 {% block content %}
-    <h1>details</h1>
-        <table>
+    <br>
+    <h1 style="font-family: &quot;Playfair Display&quot;, serif">Calculate Your Networth</h1>
+    <br><br>
+    {% comment %} <div class="container-form"> {% endcomment %}
         <form method="post">
             {% csrf_token %}
-            {% comment %} {{ form.as_p }} {% endcomment %}
-
-            <div class="form-group">
-                <tr>
-                    <td><label for="{{ form.cashRate.id_for_label }}">Cash Rate</label></td>
-                    <td>{{ form.cashRate }}</td>
-                </tr>
-                <tr>
-                <td><label for="{{ form.reRate.id_for_label }}">Real Estate  Rate</label></td>
-                <td>{{ form.reRate }}<br><br></td>
-                </tr>
-                <tr>
-                    <td><label for="{{ form.iaRate.id_for_label }}">Investment Account Rate</label></td>
-                    <td>{{ form.iaRate }}<br><br></td>
-                </tr>
-                <tr>        
-                <td><label for="{{ form.otherRate.id_for_label }}">Other Rate</label></td>
-                <td>{{ form.otherRate }}<br><br></td>
-                </tr>
-                <tr>
-                <td><label for="{{ form.slRate.id_for_label }}">Student Loan Rate</label></td>
-                <td>{{ form.slRate }}<br><br></td>
-                </tr>
-                <tr>
-                <td><label for="{{ form.mdRate.id_for_label }}">Mortage Debt  Rate</label></td>
-                <td>{{ form.mdRate }}<br><br></td>
-                <tr>  
-                <td><label for="{{ form.plRate.id_for_label }}">Credit Card Rate</label></td>
-                <td>{{ form.plRate }}<br><br></td>
-                </tr>
-                <tr>
-                <td><label for="{{ form.otherRateL.id_for_label }}">Other Rate</label></td>
-                <td>{{ form.otherRateL }}<br><br></td>
-                </tr>
-                <tr>
-                <td><label for="{{ form.yearLib.id_for_label }}">Years of Liabilities</label></td>
-                <td>{{ form.yearLib }}<br><br></td>
-                </tr>
+            {% comment %} {{ form.as_p }}  {% endcomment %}
+            <div class="container-form">
+            <div class="left-column">
+                <h3 style="font-family: &quot;Playfair Display&quot;, serif">Assets</h3>
+                <br>
+                <table>
+                    <tr>
+                        <td><label for="{{ form.cashRate.id_for_label }}">Cash Rate</label></td>
+                        <td>{{ form.cashRate }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr>
+                    <tr>
+                        <td><label for="{{ form.reRate.id_for_label }}">Real Estate  Rate</label></td>
+                        <td>{{ form.reRate }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr>
+                    <tr>
+                        <td><label for="{{ form.iaRate.id_for_label }}">Investment Account Rate</label></td>
+                        <td>{{ form.iaRate }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr>   
+                    <tr> 
+                        <td><label for="{{ form.otherRate.id_for_label }}">Other Rate</label></td>
+                        <td>{{ form.otherRate }}</td>
+                    </tr>
+                </table>
             </div>
-            <tr>
-            <td><button type="submit">Submit</button></td>
-            </tr>
+            <div class="right-column">
+                <h3 style="font-family: &quot;Playfair Display&quot;, serif">Liabilities</h3>
+                <br>
+                <table>
+                    <tr>
+                        <td><label for="{{ form.slRate.id_for_label }}">Student Loan Rate</label></td>
+                        <td>{{ form.slRate }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr> 
+                    <tr>    
+                        <td><label for="{{ form.mdRate.id_for_label }}">Mortage Debt  Rate</label></td>
+                        <td>{{ form.mdRate }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr> 
+                    <tr>    
+                        <td><label for="{{ form.plRate.id_for_label }}">Credit Card Rate</label></td>
+                        <td>{{ form.plRate }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr> 
+                    <tr>
+                        <td><label for="{{ form.otherRateL.id_for_label }}">Other Rate</label></td>
+                        <td>{{ form.otherRateL }}</td>
+                    </tr>
+                    <tr><td><br></td><td><br></td></tr> 
+                    <tr>          
+                        <td><label for="{{ form.yearLib.id_for_label }}">Years of Liabilities</label></td>
+                        <td>{{ form.yearLib }}</td>
+                    </tr>
+                </table>         
+            </div>
+        </div>
+            <div class="submit-container">
+                {% comment %} <button type="submit">Submit</button> {% endcomment %}
+                <button type="submit" style="background-color: transparent; border-color: #810ae6; color: #810ae6; border-radius: 10px" onmouseover="this.style.backgroundColor='#810ae6'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#810ae6';" class="btn btn-outline-primary">Networth</button>
+              </div>
+            
         </form>
-    </table>
+    {% comment %} <div> {% endcomment %}
+    
 {% endblock content %}
+
+
+
+
